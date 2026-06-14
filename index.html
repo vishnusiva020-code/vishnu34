@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishnu | B.Tech IT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Vishnu</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Profile Image -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="C:\Users\HP\Pictures\Picsart\Picsart_24-10-22_23-46-01-566.jpg" width="150" height="150" class="profile-img">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Hi, I'm <strong>Vishnu</strong>, a passionate B.Tech Information Technology student. 
+                I enjoy building responsive and interactive websites.</p>
+                <button onclick="showWelcomeAlert()" class="cta-button">
+                    Say Hello 👋
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">My Core Technologies</h2>
+            <div class="boxes-container">
+                <div class="tech-box" onclick="showImageModal('https://picsum.photos/id/201/600/400', 'HTML')">
+                    <div class="icon">📄</div>
+                    <h3>HTML</h3>
+                    <p>Foundation of web development</p>
+                </div>
+                
+                <div class="tech-box" onclick="showImageModal('https://picsum.photos/id/201/600/400', 'CSS')">
+                    <div class="icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Beautiful & Responsive Design</p>
+                </div>
+                
+                <div class="tech-box" onclick="showImageModal('https://picsum.photos/id/201/600/400', 'JavaScript')">
+                    <div class="icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive Web Experiences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Modal Image">
+        <p id="modalCaption"></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Vishnu | B.Tech Information Technology</p>
+            <p>Email: vishnu@example.com</p>
+        </div>
+    </footer>
+
+    <script>
+        function showWelcomeAlert() {
+            alert("Hello! Welcome to my B.Tech IT portfolio. Thanks for visiting! 🚀");
+        }
+
+        // Image Modal Functions
+        function showImageModal(imgSrc, title) {
+            document.getElementById('modalImage').src = imgSrc;
+            document.getElementById('modalCaption').textContent = title + " - Technology Showcase";
+            document.getElementById('imageModal').style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        // Close modal when clicking outside image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
